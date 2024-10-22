@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penambahan Mahasiswa</title>
+</head>
+<body>
+    <div id="anotherLine">
+        <label>Nama Mahasiswa</label>
+        <input type="text" name="name[]" id="nama">
+    </div>
+    <button onclick="addMore()">Tambah data mahasiswa</button>
+</body>
+
+<script>
+    function addMore() {
+            var nameInput = document.getElementById('nama');
+            var nameValue = nameInput.value.toUpperCase(); 
+
+            var objDiv = document.getElementById("anotherLine");
+
+            var divCreate = document.createElement("div");
+            divCreate.innerHTML = `
+                <label>Nama Mahasiswa</label>
+                <input type="text" name="name[]" value="${nameValue}">`; 
+
+            objDiv.appendChild(divCreate);
+            
+            nameInput.value = ''; 
+        }
+</script>
+</html>

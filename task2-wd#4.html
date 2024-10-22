@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penambahan Mahasiswa</title>
+    <link rel="stylesheet" href="task.css">
+</head>
+<body>
+    <h1 id="jam" style="margin-top: 50px; text-align: center; color: rgb(255, 255, 255);"></h1>
+    <div class="form" style="margin-top: 10px;">
+        <div id="anotherLine" class="yak">
+            <label>Nama Mahasiswa</label>
+            <input type="text" name="name[]" id="nama">
+            <br>    
+                <button onclick="addMore()" style="margin-bottom: 10px; margin-top: 10px;">Tambah data mahasiswa</button>
+                <button id="myBtn">submit</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    let time = document.getElementById("jam")
+    setInterval(() =>{
+    let d = new Date();
+    time.innerHTML = d.toLocaleTimeString(); },1000)
+
+    function addMore() {
+            var nameInput = document.getElementById('nama');
+            var nameValue = nameInput.value.toUpperCase(); 
+
+            var objDiv = document.getElementById("anotherLine");
+
+            var divCreate = document.createElement("div");
+            divCreate.innerHTML = `
+                <label>Nama Mahasiswa</label>
+                <input type="text" name="name[]" value="${nameValue}">
+                `; 
+
+            objDiv.appendChild(divCreate);
+            
+            nameInput.value = ''; 
+
+            document.getElementById("myBtn").addEventListener("click", function () {
+                location.reload();
+                alert("Selamat data telah berhasil disimpan");
+            });
+
+            
+        }
+        
+</script>
+</html>

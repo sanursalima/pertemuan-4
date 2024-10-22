@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #5757df;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    max-height: 15.7cm;
+}
+
+.form {
+    background-color: #fff;
+    background-color: 20%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 100px;
+    margin-top: 20px;
+}
+
+.yak {
+    margin-bottom: 10px;
+}
+
+.jem {
+    margin: auto;
+}
